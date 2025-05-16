@@ -1,0 +1,10 @@
+Gemini-Hopfield_Hebbian.docx
+HopfieldNetwork.vcxproj
+HopfieldNetwork.vcxproj.filters
+HopfieldNetwork.vcxproj.user
+HopfieldNetwork/
+x64/
+./
+../
+.vs/
+.git/
