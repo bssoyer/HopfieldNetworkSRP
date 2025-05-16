@@ -36,7 +36,7 @@ However, calculating the energy of different states (initial distorted patterns,
 + We can see if the energy decreases during the recall process.
 + It helps understand the "depth" of attractors or diagnose issues if the network gets stuck in unexpected states.
 
-These would be interesting extensions to the Hopfield network projects.
+These would be an interesting extension to the Hopfield network projects.
 
 ### Setting the Environment
 Visual Studio Community 2022 is the preferred platform for running this project, which does not use external libraries or open-source software. However, previous releases of Visual Studio (2019, 2017, 2015, etc.) shall not pose any problems with the source code, because the app is written in plain C language.
