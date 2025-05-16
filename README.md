@@ -23,8 +23,11 @@ This implementation allows exploration of fundamental Hopfield network dynamics 
 
 ### The Role of the Energy Function
 The energy function provides a theoretical understanding of why the network settles into stable states (attractors). Each update that changes a neuron's state decreases (or does not change) this energy, ensuring the network doesn't oscillate indefinitely and eventually finds a minimum. The stored patterns ideally correspond to these energy minima.
+
 Why have we not applied the energy function? Because it is not strictly necessary for the network to operate. Our network stores patterns by modifying weights (Hebbian learning) and recalls patterns by iteratively updating neuron states based on the weighted sum of inputs. This update process implicitly follows the gradient of the energy landscape without your code needing to calculate the value of `E` at each step. The network "finds its way" to a minimum based on local rules.
+
 If our network successfully stores and recalls patterns, the absence of an explicit energy calculation function doesn't mean the core associative memory demonstration is flawed. The primary goal is often to show this recall behaviour. For the demonstration projects, HopfieldNetworkSRP/LCP  using the energy function is not a significant drawback for demonstrating the fundamental recall capabilities of our Hopfield network.
+
 However, calculating the energy of different states (initial distorted patterns, intermediate states, final converged patterns, stored reference patterns) can provide valuable insights since
 + We can numerically verify that stored patterns are indeed low-energy states.
 + We can see if the energy decreases during the recall process.
