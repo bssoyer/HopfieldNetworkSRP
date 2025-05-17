@@ -4,7 +4,7 @@
 
 This project implements a Hopfield network using the C programming language. It demonstrates the network's ability to function as an associative (content-addressable) memory, capable of recalling a stored pattern when presented with a noisy or incomplete version. This example focuses on storing and recalling simple patterns like digital digits on a grid.
 
-The specific reference pattern for the Hopfield network is the `9` digit encoded on a 7x11 matrix. The corresponding distorted pattern is stored again in a 7x11 matrix. 
+The specific reference pattern for the Hopfield network is the `9` digit encoded on a 7x11 matrix. The corresponding distorted pattern used for testing is also a 7x11 matrix. 
 
 ### Hopfield Networks
 A Hopfield network is a recurrent artificial neural network popularized by John Hopfield. Key characteristics include:
@@ -27,16 +27,14 @@ The energy function provides a theoretical understanding of why the network sett
 
 Why have we not applied the energy function? Because it is not strictly necessary for the network to operate. Our network stores patterns by modifying weights (Hebbian learning) and recalls patterns by iteratively updating neuron states based on the weighted sum of inputs. This update process implicitly follows the gradient of the energy landscape without our code needing to calculate the value of `E` at each step. The network "finds its way" to a minimum based on local rules.
 
-Why have we not applied the energy function? Because it is not strictly necessary for the network to operate. Our network stores patterns by modifying weights (Hebbian learning) and recalls patterns by iteratively updating neuron states based on the weighted sum of inputs. This update process implicitly follows the gradient of the energy landscape without our code needing to calculate the value of `E` at each step. The network "finds its way" to a minimum based on local rules.
-
-If our network successfully stores and recalls patterns, the absence of an explicit energy calculation function doesn't mean the core associative memory demonstration is flawed. The primary goal is often to show this recall behaviour. For the demonstration projects, HopfieldNetworkSRP/LCP  using the energy function is not a significant drawback for demonstrating the fundamental recall capabilities of our Hopfield network.
+If our network successfully stores and recalls patterns, the absence of an explicit energy calculation function doesn't mean the core associative memory demonstration is flawed. The primary goal is often to show this recall behaviour. For these demonstration projects (HopfieldNetworkSRP and the upcoming HopfieldNetworkLCP), the absence of an explicit energy function calculation is not a significant drawback when the primary goal is to demonstrate fundamental recall capabilities.
 
 However, calculating the energy of different states (initial distorted patterns, intermediate states, final converged patterns, stored reference patterns) can provide valuable insights since
 + We can numerically verify that stored patterns are indeed low-energy states.
 + We can see if the energy decreases during the recall process.
 + It helps understand the "depth" of attractors or diagnose issues if the network gets stuck in unexpected states.
 
-These would be an interesting extension to the Hopfield network projects.
+These would be an interesting extension to the HopfieldNetworkLCP project.
 
 ### Setting the Environment
 Visual Studio Community 2022 is the preferred platform for running this project, which does not use external libraries or open-source software. However, previous releases of Visual Studio (2019, 2017, 2015, etc.) shall not pose any problems with the source code, because the app is written in plain C language.
